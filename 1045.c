@@ -1,103 +1,25 @@
 #include <stdio.h>
 int main()
 {
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
+    double a,b,c,d,e,f;
+    scanf("%lf %lf %lf",&a,&b,&c);
 
-    if(a>b && a>c)
-    {
-        if(b>c)
-        {
-            printf("%d\n",a);
-            printf("%d\n",b);
-            printf("%d\n",c);
-        }
-        else
-        {
-            printf("%d\n",a);
-            printf("%d\n",c);
-            printf("%d\n",b);
-        }
-    }
-    if(b>a && b>c)
-    {
-        if(c>a)
-        {
-            printf("%d\n",b);
-            printf("%d\n",c);
-            printf("%d\n",a);
-        }
-        else
-        {
-            printf("%d\n",b);
-            printf("%d\n",a);
-            printf("%d\n",c);
-        }
-    }
+    d=a*a;
+    e=b*b;
+    f=c*c;
 
-    if(c>a && c>b)
-    {
-        if(b>a)
-        {
-            printf("%d\n",c);
-            printf("%d\n",b);
-            printf("%d\n",a);
-        }
-        else
-        {
-            printf("%d\n",c);
-            printf("%d\n",a);
-            printf("%d\n",b);
-        }
-    }
-
-    printf("\n");
-
-    if(a<b && a<c)
-    {
-        if(b<c)
-        {
-            printf("%d\n",a);
-            printf("%d\n",b);
-            printf("%d\n",c);
-        }
-        else
-        {
-            printf("%d\n",a);
-            printf("%d\n",c);
-            printf("%d\n",b);
-        }
-    }
-    if(b<a && b<c)
-    {
-        if(c<a)
-        {
-            printf("%d\n",b);
-            printf("%d\n",c);
-            printf("%d\n",a);
-        }
-        else
-        {
-            printf("%d\n",b);
-            printf("%d\n",a);
-            printf("%d\n",c);
-        }
-    }
-    if(c<a && c<b)
-    {
-        if(b<a)
-        {
-            printf("%d\n",c);
-            printf("%d\n",b);
-            printf("%d\n",a);
-        }
-        else
-        {
-            printf("%d\n",c);
-            printf("%d\n",a);
-            printf("%d\n",b);
-        }
-    }
+    if (a>=b+c|| b>=a+c||c>=a+b)
+        printf("NAO FORMA TRIANGULO\n");
+    else if (d==e+f|| e==d+f|| f==d+e)
+       printf("TRIANGULO RETANGULO\n");
+    else if (d>e+f|| e>d+f|| f>d+e)
+        printf("TRIANGULO OBTUSANGULO\n");
+    else if (d<e+f|| e<d+f|| f<d+e)
+        printf("TRIANGULO ACUTANGULO\n");
+    if (a==b && a==c)
+        printf("TRIANGULO EQUILATERO\n");
+    if (a==b && a!=c || b==c && b!=a || a==c && a!=b)
+        printf("TRIANGULO ISOSCELES\n");
 
     return 0;
 }
